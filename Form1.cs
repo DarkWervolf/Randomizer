@@ -22,6 +22,8 @@ namespace Randomizer
         private void run_btn_Click(object sender, EventArgs e)
         {
             //getting info from the user
+
+            //filename check
             string filename = filenm_textbox.Text;
             if (filename == "")
             {
@@ -32,6 +34,7 @@ namespace Randomizer
             {
                 filename += ".txt";
 
+                //getting info for random
                 string rowsq_str = updown_rows.Text;
                 int rowsq = int.Parse(rowsq_str);
 
@@ -44,11 +47,8 @@ namespace Randomizer
                 string minnum_str = updown_minnum.Text;
                 int minnum = int.Parse(minnum_str);
 
-                //check if it works
-                //int sum = minnum + maxnum + rowsq + columnsq;
-                //mainlbl.Text = sum.ToString() + filename;
-                //Refresh();
-
+                //getting directory to make file to
+                //and writing numbers
                 string currentPath = Directory.GetCurrentDirectory();
                 string yourfilesfoldername = Path.Combine(currentPath, "Your Files");
                 string newpath = Path.Combine(yourfilesfoldername, filename);
@@ -83,6 +83,7 @@ namespace Randomizer
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //resetting everything to default values
             filenm_textbox.ResetText();
             updown_columns.Value = 1;
             updown_rows.Value = 1;

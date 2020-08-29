@@ -18,13 +18,13 @@ namespace Randomizer
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
+            //creating Your Files directory before app is drawn
             string currentPath = Directory.GetCurrentDirectory();
             string yourfilesfoldername = Path.Combine(currentPath, "Your Files");
             if (!Directory.Exists(Path.Combine(currentPath, "Your Files")))
             {
                 Directory.CreateDirectory(yourfilesfoldername);
             }
-            //at this point your folder should exist
 
             Application.Run(new Form1());
 
